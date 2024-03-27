@@ -233,7 +233,7 @@ export const TagsTable = () => {
           Showing page {pagination.pageIndex}
         </span>
 
-        <div className="text-sm text-gray-800">
+        <div className="flex space-x-2">
           <Button
             variant="outline"
             size="sm"
