@@ -10,12 +10,10 @@ interface fetchTagsProps {
 }
 
 export const fetchTags = async ({ queryKey }: fetchTagsProps) => {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-
   const { sorting, pagination } = queryKey[1];
   const columnSort = sorting[0];
-  const url = new URL(STACK_OVERFLOW_API_URL);
 
+  const url = new URL(STACK_OVERFLOW_API_URL);
   url.pathname = "/2.3/tags";
   url.searchParams.set("pagesize", String(pagination.pageSize));
   url.searchParams.set("page", String(pagination.pageIndex));

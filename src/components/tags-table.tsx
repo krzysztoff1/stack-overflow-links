@@ -220,7 +220,7 @@ export const TagsTable = () => {
             <TableRow>
               <TableCell colSpan={columns.length} className="h-24 text-center">
                 <span className="text-red-500">
-                  An error occurred while fetching data.
+                  An error occurred while fetching data. Please try again later.
                 </span>
               </TableCell>
             </TableRow>
