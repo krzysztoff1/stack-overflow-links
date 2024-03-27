@@ -228,32 +228,39 @@ export const TagsTable = () => {
         </TableBody>
       </Table>
 
-      <div className="flex items-center justify-end space-x-2 p-2">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() =>
-            setPagination((prev) => ({
-              ...prev,
-              pageIndex: prev.pageIndex - 1,
-            }))
-          }
-          disabled={pagination.pageIndex === 1}
-        >
-          Previous
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() =>
-            setPagination((prev) => ({
-              ...prev,
-              pageIndex: prev.pageIndex + 1,
-            }))
-          }
-        >
-          Next
-        </Button>
+      <div className="flex items-center justify-between p-2">
+        <span className="block text-sm text-gray-800">
+          Showing page {pagination.pageIndex}
+        </span>
+
+        <div className="text-sm text-gray-800">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() =>
+              setPagination((prev) => ({
+                ...prev,
+                pageIndex: prev.pageIndex - 1,
+              }))
+            }
+            disabled={pagination.pageIndex === 1}
+          >
+            Previous
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() =>
+              setPagination((prev) => ({
+                ...prev,
+                pageIndex: prev.pageIndex + 1,
+              }))
+            }
+            disabled={query.data?.has_more === false}
+          >
+            Next
+          </Button>
+        </div>
       </div>
     </div>
   );
